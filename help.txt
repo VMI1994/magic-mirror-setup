@@ -1,0 +1,4 @@
+alias help="cat ~/Magicmirror/help.txt
+alias start="cd ~ && pm2 start mm.sh"
+alias stop="cd ~ $$ pm2 stop mm"
+alias restart="cd ~ $$ pm2 restart mm"
