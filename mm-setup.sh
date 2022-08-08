@@ -97,4 +97,41 @@ cp ~/magic-mirror-setup/help.txt ~/Magicmirror/help.txt
 cat ~/Magicmirror/help.txt >> ~/.bashrc
 
 
+# Download Modules
+echo "Downloag Magicmirror Modules"
+cd ~/Magicmirror/modules
+git clone https://github.com/edward-shen/MMM-pages.git
+git clone https://github.com/vincep5/MMM-Pollen.git
+git clone https://github.com/mumblebaj/MMM-News.git
+git clone https://github.com/cowboysdude/MMM-Nascar.git
+git clone https://github.com/jclarke0000/MMM-MyScoreboard.git
+git clone https://github.com/vincep5/MMM-MyStandings.git
+git clone https://github.com/AdamMoses-GitHub/MMM-ImageSlideshow.git
+git clone https://github.com/edward-shen/MMM-page-indicator.git
+git clone https://github.com/slametps/MMM-NetworkConnection.git
+pause
+echo "Installing Magicmirror modules"
+cd ~/Magicmirror/modules/MMM-pages
+npm install
+cd ~/Magicmirror/modules/MMM-Pollen
+npm install
+cd ~/Magicmirror/modules/MMM-News
+npm install
+cd ~/Magicmirror/modules/MMM-Nascar
+npm install
+cd ~/Magicmirror/modules/MMM-MyScoreboard
+npm install
+cd ~/Magicmirror/modules/MMM-MyStandings
+npm install
+cd ~/Magicmirror/modules/MMM-ImageSlideshow
+npm install
+cd ~/Magicmirror/modules/MMM-page-indicator
+npm install
+cd ~/Magicmirror/modules/MMM-NetworkConnection
+npm install
+echo "modules installed"
+cd ~
+pm2 restart mm
+
+
 # Setup will no delete the install files and exit
