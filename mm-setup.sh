@@ -73,6 +73,28 @@ pause
 sudo npm install -g pm2
 cmd=$(pm2 startup | grep sudo)
 sudo $cmd
+# Kiosk or Server mode
+echo "Do you want to install in kiosk mode(y/N)?"
+read kiosk
+if [ $kiosk == "y" ]
+then
+  cp ~/magic-mirror-setup/mm.kiosk ~/mm.sh
+else
+  cp ~/magic-mirror-setup/mm.server ~/mm.sh
+  echo "Your MagicMirror is available at http://127.0.0.1:8080
+fi
 cd ~
+sudo chmod +x mm.sh
 pm2 start mm.sh
 pm2 save
+clear
+echo "PM2 will autostart at boot and restart after any crashes"
+pause
+
+
+# Add bash aliases to control magicmirror
+cp ~/magic-mirror-setup/help.txt ~/Magicmirror/help.txt
+cat ~/Magicmirror/help.txt >> ~/.bashrc
+
+
+# Setup will no delete the install files and exit
