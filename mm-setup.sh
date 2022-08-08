@@ -48,9 +48,9 @@ pause
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt install -y nodejs
 
-# Install Magicmirror
+# Install MagicMirror
 clear
-echo "Cloning Magicmirror into directory"
+echo "Cloning MagicMirror into directory"
 pause
 cd ~
 git clone https://github.com/MichMich/MagicMirror
@@ -93,13 +93,13 @@ pause
 
 
 # Add bash aliases to control magicmirror
-cp ~/magic-mirror-setup/help.txt ~/Magicmirror/help.txt
-cat ~/Magicmirror/help.txt >> ~/.bashrc
+cp ~/magic-mirror-setup/help.txt ~/MagicMirror/help.txt
+cat ~/MagicMirror/help.txt >> ~/.bashrc
 
 
 # Download Modules
-echo "Downloag Magicmirror Modules"
-cd ~/Magicmirror/modules
+echo "Downloag MagicMirror Modules"
+cd ~/MagicMirror/modules
 git clone https://github.com/edward-shen/MMM-pages.git
 git clone https://github.com/vincep5/MMM-Pollen.git
 git clone https://github.com/mumblebaj/MMM-News.git
@@ -111,23 +111,23 @@ git clone https://github.com/edward-shen/MMM-page-indicator.git
 git clone https://github.com/slametps/MMM-NetworkConnection.git
 pause
 echo "Installing Magicmirror modules"
-cd ~/Magicmirror/modules/MMM-pages
+cd ~/MagicMirror/modules/MMM-pages
 npm install
-cd ~/Magicmirror/modules/MMM-Pollen
+cd ~/MagicMirror/modules/MMM-Pollen
 npm install
-cd ~/Magicmirror/modules/MMM-News
+cd ~/MagicMirror/modules/MMM-News
 npm install
-cd ~/Magicmirror/modules/MMM-Nascar
+cd ~/MagicMirror/modules/MMM-Nascar
 npm install
-cd ~/Magicmirror/modules/MMM-MyScoreboard
+cd ~/MagicMirror/modules/MMM-MyScoreboard
 npm install
-cd ~/Magicmirror/modules/MMM-MyStandings
+cd ~/MagicMirror/modules/MMM-MyStandings
 npm install
-cd ~/Magicmirror/modules/MMM-ImageSlideshow
+cd ~/MagicMirror/modules/MMM-ImageSlideshow
 npm install
-cd ~/Magicmirror/modules/MMM-page-indicator
+cd ~/MagicMirror/modules/MMM-page-indicator
 npm install
-cd ~/Magicmirror/modules/MMM-NetworkConnection
+cd ~/MagicMirror/modules/MMM-NetworkConnection
 npm install
 echo "modules installed"
 cd ~
