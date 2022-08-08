@@ -71,8 +71,8 @@ clear
 echo "PM2 Process manager will now be installed"
 pause
 sudo npm install -g pm2
-pm2 startup
-
-
+cmd=$(pm2 startup | grep sudo)
+sudo $cmd
+cd ~
 pm2 start mm.sh
 pm2 save
