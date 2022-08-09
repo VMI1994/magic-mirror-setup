@@ -73,20 +73,31 @@ pause
 sudo npm install -g pm2
 cmd=$(pm2 startup | grep sudo)
 sudo $cmd
+cp ~/magic-mirror-setup/mm.kiosk ~/mm.sh
+cp ~/magic-mirror-setup/config1.js ~/MagicMirror/config/config.js
+cd ~
+sudo chmod +x mm.sh
+pm2 start mm.sh
+pm2 save
+sleep 10
+pm2 stop mm
+
+
+
 # Kiosk or Server mode
+clear
 echo "Do you want to install in kiosk mode(y/N)?"
 read kiosk
 if [ $kiosk == "y" ]
 then
   cp ~/magic-mirror-setup/mm.kiosk ~/mm.sh
+  sudo chmod +x mm.sh
 else
   cp ~/magic-mirror-setup/mm.server ~/mm.sh
-  echo "Your MagicMirror is available at http://127.0.0.1:8080
+  sudo chmod +x mm.sh
+  echo "Your MagicMirror will be available at http://127.0.0.1:8080 when install is completed"
+  pause
 fi
-cd ~
-sudo chmod +x mm.sh
-pm2 start mm.sh
-pm2 save
 clear
 echo "PM2 will autostart at boot and restart after any crashes"
 pause
@@ -130,6 +141,7 @@ npm install
 cd ~/MagicMirror/modules/MMM-NetworkConnection
 npm install
 echo "modules installed"
+cp ~/magic-mirror-setup/config.js ~/MagicMirror/config/config.js
 cd ~
 pm2 restart mm
 
