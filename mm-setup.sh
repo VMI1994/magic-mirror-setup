@@ -73,6 +73,8 @@ pause
 sudo npm install -g pm2
 cmd=$(pm2 startup | grep sudo)
 sudo $cmd
+cd ~/MagicMirror/modules
+git clone https://github.com/SaltyRiver/MMM-SimpleText.git
 cp ~/magic-mirror-setup/mm.kiosk ~/mm.sh
 cp ~/magic-mirror-setup/config1.js ~/MagicMirror/config/config.js
 cd ~
