@@ -39,83 +39,26 @@ let config = {
 
 	modules: [
 		{
-			module: 'MMM-pages',
-			config: {
-                modules:
-                    [
-                    [ "calendar", "clock", "MMM-News" ], //PAGE 1
-                    [ "MMM-Pollen" ], //PAGE 2
-					[ "MMM-Nascar"], //PAGE 3
-					[ "MMM-MyScoreboard" ], //PAGE 4
-                    [ "MMM-MyStandings" ],  //PAGE 5
-                    [ 'MMM-ImageSlideshow' ], //PAGE 6
-					],
-                fixed: ["MMM-page-indicator", 'MMM-NetworkConnection' ],
-                rotationTime: 10 * 1000, //TIME BETWEEN PAGE CHANGE IN SECONDS
-				},
-		},
-		{
-			module: "alert",
-		},
-		{
-			module: "updatenotification",
-			position: "top_bar"
-		},
-		{
-			module: "clock",
-			position: "top_left",
-			config: {
-				displaySeconds: false,
+ 	module: 'MMM-SimpleText',
+ 	position: 'top_center',
+ 	config: {
+			text: {
+			  'value': 'Congratulations, your Magic Mirror is installed.  It will restart when additional modules have been loaded'
+			},
+			fontURL: {
+			  'value': 'Tahoma, Geneva, sans-serif'
+			},
+			fontSize: {
+			  'value': 'xx-large'
+			},
+			fontStyle: {
+			  'value': 'italic'
+			},
+			color: {
+			  'value': '#FFFFFF'
 			}
-		},
-		{ 
-        	module: "MMM-Nascar",
-        	position: 'lower_third',
-        	config: {
-		         header: true,              //to show header
-		         rotateInterval: 5 * 1000,   //how often to change this is set to 15 seconds
-		         updateInterval: 60 * 60 * 1000
-					}
-         },
-		{
-			module: "calendar",
-			header: "US Holidays",
-			position: "top_left",
-			config: {
-				maximumEntries: 5,
-				maximumNumberOfDays: 30,
-				calendars: [
-						{
-						symbol: "calendar-check",
-						url: "webcal://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics"					}
-					]
-					}
-		},
-		{
-			module: "MMM-News",
-			position: "bottom_left",
-			header: "Breaking News",
-			config: {
-				apiKey : "0c02eb44cade428fa848b7533db2f5ab",
-				type: "horizontal",
-				items: 5, // number of how many headlines to get from each query. max 100
-				drawInterval: 7 * 1000, // How long time each article will be shown.
-				scanInterval: 1000*60*60, // This will be automatically recalculated by number of queries to avoid query quota limit. This could be minimum interval.
-				query : [
-					{
-					sources: "associated-press, fox-news",
-					},
-					{
-					country: "us",
-					className: "redTitle",
-					},
-					{
-					country: "us",
-					category: "",
-					}
-					],
-				}
-		},
+		}
+},
 
 	]
 };
