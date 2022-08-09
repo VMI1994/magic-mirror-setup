@@ -116,6 +116,7 @@ cd ~/MagicMirror/modules
 git clone https://github.com/edward-shen/MMM-pages.git
 git clone https://github.com/edward-shen/MMM-page-indicator.git
 git clone https://github.com/slametps/MMM-NetworkConnection.git
+git clone https://github.com/fpfuetsch/MMM-GitHub-Monitor.git
 
 
 # Install Modules
@@ -123,18 +124,15 @@ clear
 echo "Installing Magicmirror modules"
 pause
 cd ~/MagicMirror/modules/MMM-pages
-npm install
-npm audit fix
+npm install $$ npm audit fix
 cd ~/MagicMirror/modules/MMM-page-indicator
-npm install
-npm audit fix
-cd ~/MagicMirror/modules/MMM-NetworkConnection
-npm install
-npm audit fix
+npm install $$ npm audit fix
+cd ~/MagicMirror/modules/MMM-GitHub-Monitor
+npm install $$ npm audit fix
 echo "modules installed"
 cp ~/magic-mirror-setup/config.js ~/MagicMirror/config/config.js
 cd ~
 pm2 restart mm
 
 
-# Setup will no delete the install files and exit
+# Setup will now delete the install files and exit
