@@ -93,10 +93,10 @@ read kiosk
 if [ $kiosk == "y" ]
 then
   cp ~/magic-mirror-setup/mm.kiosk ~/mm.sh
-  sudo chmod +x mm.sh
+  sudo chmod +x ~/mm.sh
 else
   cp ~/magic-mirror-setup/mm.server ~/mm.sh
-  sudo chmod +x mm.sh
+  sudo chmod +x ~/mm.sh
   echo "Your MagicMirror will be available at http://127.0.0.1:8080 when install is completed"
   pause
 fi
@@ -114,34 +114,23 @@ cat ~/MagicMirror/help.txt >> ~/.bashrc
 echo "Downloag MagicMirror Modules"
 cd ~/MagicMirror/modules
 git clone https://github.com/edward-shen/MMM-pages.git
-git clone https://github.com/vincep5/MMM-Pollen.git
-git clone https://github.com/mumblebaj/MMM-News.git
-git clone https://github.com/cowboysdude/MMM-Nascar.git
-git clone https://github.com/jclarke0000/MMM-MyScoreboard.git
-git clone https://github.com/vincep5/MMM-MyStandings.git
-git clone https://github.com/AdamMoses-GitHub/MMM-ImageSlideshow.git
 git clone https://github.com/edward-shen/MMM-page-indicator.git
 git clone https://github.com/slametps/MMM-NetworkConnection.git
-pause
+
+
+# Install Modules
+clear
 echo "Installing Magicmirror modules"
+pause
 cd ~/MagicMirror/modules/MMM-pages
 npm install
-cd ~/MagicMirror/modules/MMM-Pollen
-npm install
-cd ~/MagicMirror/modules/MMM-News
-npm install
-cd ~/MagicMirror/modules/MMM-Nascar
-npm install
-cd ~/MagicMirror/modules/MMM-MyScoreboard
-npm install
-cd ~/MagicMirror/modules/MMM-MyStandings
-npm install
-cd ~/MagicMirror/modules/MMM-ImageSlideshow
-npm install
+npm audit fix
 cd ~/MagicMirror/modules/MMM-page-indicator
 npm install
+npm audit fix
 cd ~/MagicMirror/modules/MMM-NetworkConnection
 npm install
+npm audit fix
 echo "modules installed"
 cp ~/magic-mirror-setup/config.js ~/MagicMirror/config/config.js
 cd ~
