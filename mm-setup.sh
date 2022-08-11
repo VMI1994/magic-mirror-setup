@@ -135,4 +135,17 @@ cd ~
 pm2 restart mm
 
 
+# Activate Aliases before cleaning up(Used separate script as the command will halt this script
+bash ~/magic-mirror-setup/alias.sh &
+
+
+
 # Setup will now delete the install files and exit
+clear
+echo "Setup is complete, setup files will be deleted"
+echo
+echo "If you selected server mode, your magicmirror will be located at http://YOUR_SERVER_IP:8080"
+pause
+cd ~
+#sleep 5 && rm -rf magic-mirror-setup
+exit
