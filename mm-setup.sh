@@ -11,7 +11,7 @@ read junk
 
 
 # Dependencies
-apps="curl git"
+apps="curl git python3 python3-pip"
 
 
 # Introduction
