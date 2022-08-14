@@ -147,5 +147,7 @@ echo
 echo "If you selected server mode, your magicmirror will be located at http://YOUR_SERVER_IP:8080"
 pause
 cd ~
-#sleep 5 && rm -rf magic-mirror-setup
+rm -rf magic-mirror-setup &
+sleep 2
+clear
 exit
