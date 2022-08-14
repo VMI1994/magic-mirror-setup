@@ -11,7 +11,7 @@ read junk
 
 
 # Dependencies
-apps="curl git python3 python3-pip"
+apps="curl git python3 python3-pip libffi-dev nginx-full"
 
 
 # Introduction
@@ -102,6 +102,17 @@ else
 fi
 clear
 echo "PM2 will autostart at boot and restart after any crashes"
+pause
+
+
+# Install mmpm(magicmirror package manager - GUI frontend to manage modules and config file)
+echo "mmpm(magicmirror package manager will now be installed and you will be taken through"
+echo "a guided setup."
+python3 -m pip install --upgrade --no-cache-dir mmpm
+mmpm --guided-setup
+echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
+clear
+echo "mmpm was installed..."
 pause
 
 
