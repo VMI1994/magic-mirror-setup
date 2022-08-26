@@ -61,7 +61,6 @@ echo "up to 30 minutes to complete.  Do not press"
 echo "any keys until prompted to"
 pause
 npm install --only=prod --omit=dev
-npm audit fix
 clear
 echo "MagicMirror has been installed"
 pause
@@ -105,17 +104,6 @@ echo "PM2 will autostart at boot and restart after any crashes"
 pause
 
 
-# Install mmpm(magicmirror package manager - GUI frontend to manage modules and config file)
-echo "mmpm(magicmirror package manager will now be installed and you will be taken through"
-echo "a guided setup."
-python3 -m pip install --upgrade --no-cache-dir mmpm
-mmpm --guided-setup
-echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
-clear
-echo "mmpm was installed..."
-pause
-
-
 # Add bash aliases to control magicmirror
 cp ~/magic-mirror-setup/help.txt ~/MagicMirror/help.txt
 cat ~/MagicMirror/help.txt >> ~/.bashrc
@@ -135,11 +123,11 @@ clear
 echo "Installing Magicmirror modules"
 pause
 cd ~/MagicMirror/modules/MMM-pages
-npm install $$ npm audit fix
+npm install
 cd ~/MagicMirror/modules/MMM-page-indicator
-npm install $$ npm audit fix
+npm install
 cd ~/MagicMirror/modules/MMM-GitHub-Monitor
-npm install $$ npm audit fix
+npm install
 echo "modules installed"
 cp ~/magic-mirror-setup/config.js ~/MagicMirror/config/config.js
 cd ~
