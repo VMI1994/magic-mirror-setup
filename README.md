@@ -16,3 +16,4 @@ Installation:
 4)cd magic-mirror-setup
 5)bash mm-setup.sh
 6)Follow on screen instructions
+
