@@ -20,6 +20,7 @@ echo "This script will create a magic mirror instance on this server but first"
 echo "we will install dependencies"
 pause
 sudo apt update
+sudo apt dist-upgrade -y
 sudo apt install $apps
 
 
@@ -47,7 +48,6 @@ echo "We will now install node.js"
 pause
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt install -y nodejs
-sudo apt install npm
 
 
 # Install MagicMirror
@@ -130,8 +130,7 @@ cd ~/MagicMirror/modules/MMM-GitHub-Monitor
 npm install
 echo "modules installed"
 cp ~/magic-mirror-setup/config.js ~/MagicMirror/config/config.js
-cd ~
-pm2 restart mm
+
 
 
 # Activate Aliases before cleaning up(Used separate script as the command will halt this script
@@ -150,6 +149,7 @@ cp control.sh ~/script-server
 sudo chmod +x ~/script-server/control.sh
 pm2 start ~/script-server/control.sh
 pm2 save
+pm2 stop control
 pause
 
 # Setup will now delete the install files and exit
@@ -165,4 +165,8 @@ echo 'MagicMirror is located at http://localhost:8080'
 echo
 echo
 echo 'Control server is located at http://localhost:5000'
+sleep 5
+echo 'System will now reboot'
+sudo reboot now &
+sleep 5
 exit
