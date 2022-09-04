@@ -49,6 +49,8 @@ echo "We will now install node.js"
 pause
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt install -y nodejs
+sudo apt install npm
+
 
 # Install MagicMirror
 clear
