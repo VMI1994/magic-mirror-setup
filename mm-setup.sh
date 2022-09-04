@@ -138,12 +138,13 @@ pm2 restart mm
 bash ~/magic-mirror-setup/alias.sh &
 
 
-# Install Bugy/script-server customized to control the magicmirror via bash scripts
+# Install https://github.com/bugy/script-server.git customized to control the magicmirror via bash scripts
 cd ~
 git clone https://github.com/bugy/script-server.git
 cd ~/magic-mirror-setup/scriptserver
 cp *.sh ~/
 cp *.json ~/script-server/conf/runners
+cp conf.json ~/script-server/conf
 pm2 start ~/control.sh
 pm2 save
 
