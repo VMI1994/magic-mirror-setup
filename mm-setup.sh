@@ -11,7 +11,7 @@ read junk
 
 
 # Dependencies
-apps="curl git python3 python3-pip libffi-dev nginx-full"
+apps="curl git python3 python3-pip libffi-dev nginx-full neofetch"
 
 
 # Introduction
