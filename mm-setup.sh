@@ -138,6 +138,15 @@ pm2 restart mm
 bash ~/magic-mirror-setup/alias.sh &
 
 
+# Install Bugy/script-server customized to control the magicmirror via bash scripts
+cd ~
+git clone https://github.com/bugy/script-server.git
+cd ~/magic-mirror-setup/scriptserver
+cp *.sh ~/
+cp *.json ~/script-server/conf/runners
+pm2 start ~/control.sh
+pm2 save
+
 
 # Setup will now delete the install files and exit
 clear
@@ -149,4 +158,8 @@ cd ~
 rm -rf magic-mirror-setup &
 sleep 2
 clear
+echo 'MagicMirror is located at http://localhost:8080'
+echo
+echo
+echo 'Control server is located at http://localhost:5000'
 exit
