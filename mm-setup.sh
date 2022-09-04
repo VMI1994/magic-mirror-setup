@@ -19,7 +19,9 @@ clear
 echo "This script will create a magic mirror instance on this server but first"
 echo "we will install dependencies"
 pause
+sudo apt update
 sudo apt install $apps
+
 
 # Offer optional server setup before magic mirror install
 clear
