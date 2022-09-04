@@ -16,15 +16,14 @@ This has been tested on Ubuntu Desktop and Raspberry Pi OS(with desktop, will no
 
 Installation:
 
-1)Log in to terminal as a non-root user with sudo privileges
+1) Log in to terminal as a non-root user with sudo privileges
 
-2)cd ~
+2) cd ~
 
-3)git clone https://github.com/VMI1994/magic-mirror-setup.git
+3) git clone https://github.com/VMI1994/magic-mirror-setup.git
 
-4)cd magic-mirror-setup
+4) cd magic-mirror-setup
 
-5)bash mm-setup.sh
+5) bash mm-setup.sh
 
-6)Follow on screen instructions
-
+6) Follow on screen instructions
