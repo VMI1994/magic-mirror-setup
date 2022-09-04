@@ -31,7 +31,6 @@ read choice
 if [ $choice == "y" ]
 then
   cd ~
-  sudo apt install git
   git clone https://github.com/VMI1994/linux-setup.git
   bash ~/linux-setup/setup.sh
 else
@@ -100,7 +99,7 @@ then
 else
   cp ~/magic-mirror-setup/mm.server ~/mm.sh
   sudo chmod +x ~/mm.sh
-  echo "Your MagicMirror will be available at http://127.0.0.1:8080 when install is completed"
+  echo "Your MagicMirror will be available at http://localhost:8080 when install is completed"
   pause
 fi
 clear
@@ -114,7 +113,7 @@ cat ~/MagicMirror/help.txt >> ~/.bashrc
 
 
 # Download Modules
-echo "Downloag MagicMirror Modules"
+echo "Downloading MagicMirror Modules"
 cd ~/MagicMirror/modules
 git clone https://github.com/edward-shen/MMM-pages.git
 git clone https://github.com/edward-shen/MMM-page-indicator.git
