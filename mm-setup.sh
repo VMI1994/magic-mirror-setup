@@ -92,15 +92,13 @@ pm2 stop mm
 clear
 echo "Do you want to install in kiosk mode(y/N)?"
 read kiosk
-if [ $kiosk == "y" ]
+if [ $kiosk = "y" ]
 then
   cp ~/magic-mirror-setup/mm.kiosk ~/mm.sh
   sudo chmod +x ~/mm.sh
 else
   cp ~/magic-mirror-setup/mm.server ~/mm.sh
   sudo chmod +x ~/mm.sh
-  echo "Your MagicMirror will be available at http://localhost:8080 when install is completed"
-  pause
 fi
 clear
 echo "PM2 will autostart at boot and restart after any crashes"
@@ -153,7 +151,7 @@ cp control.sh ~/script-server
 sudo chmod +x ~/script-server/control.sh
 pm2 start ~/script-server/control.sh
 pm2 save
-
+pause
 
 # Setup will now delete the install files and exit
 clear
