@@ -143,9 +143,12 @@ cd ~
 git clone https://github.com/bugy/script-server.git
 cd ~/magic-mirror-setup/scriptserver
 cp *.sh ~/
+sudo chmod +x ~/*.sh
 cp *.json ~/script-server/conf/runners
 cp conf.json ~/script-server/conf
-pm2 start ~/control.sh
+cp control.sh ~/script-server
+sudo chmod +x ~/script-server/control.sh
+pm2 start ~/script-server/control.sh
 pm2 save
 
 
