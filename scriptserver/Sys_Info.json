@@ -1,0 +1,7 @@
+{
+  "name": "Sys Info",
+  "script_path": "~/sysinfo.sh",
+  "requires_terminal": true,
+  "output_format": "terminal",
+  "parameters": []
+}
