@@ -1,4 +1,4 @@
-# magic-mirror-setup
+# magic-mirror-setup  
 A bash script to setup an instance of MagicMirror2 on Raspberry Pi OS
 
 This is a bash script to install a Magicmirror(Credit to Michael Teeuw - https://github.com/MichMich/MagicMirror.git)
