@@ -28,7 +28,7 @@ clear
 echo "would you like to secure and update the server before"
 echo "installing magic mirror(y/N)?"
 read choice
-if [ $choice == "y" ]
+if [ $choice = "y" ]
 then
   cd ~
   git clone https://github.com/VMI1994/linux-setup.git
@@ -36,7 +36,6 @@ then
 else
   clear
   echo "magic mirror installation will now begin"
-  pause
 fi
 
 
@@ -157,7 +156,6 @@ pause
 clear
 echo "Setup is complete, setup files will be deleted"
 echo
-echo "If you selected server mode, your magicmirror will be located at http://YOUR_SERVER_IP:8080"
 pause
 cd ~
 rm -rf magic-mirror-setup &
