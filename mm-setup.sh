@@ -13,10 +13,10 @@ read junk
 # User Input first so script can run unattended
 clear
 echo "would you like to secure and update the server before"
-echo "installing magic mirror(y/N)?"
+echo "installing magic mirror(Y/n)?"
 read choice
 clear
-echo "Do you want to install in kiosk mode(y/N)?"
+echo "Do you want to install in kiosk mode(Y/n)?"
 echo "kiosk shows MagicMirror on default display versus running web server only"
 read kiosk
 
@@ -35,14 +35,14 @@ sudo apt install $apps -y
 
 
 # Offer optional server setup before magic mirror install
-if [ $choice = "y" ]
+if [ $choice = "n" ]
 then
+  clear
+  echo "magic mirror installation will now begin"
+else
   cd ~
   git clone https://github.com/VMI1994/linux-setup.git
   bash ~/linux-setup/setup.sh
-else
-  clear
-  echo "magic mirror installation will now begin"
 fi
 
 
@@ -94,12 +94,12 @@ pm2 stop mm
 
 
 # Kiosk or Server mode
-if [ $kiosk = "y" ]
+if [ $kiosk = "n" ]
 then
-  cp ~/magic-mirror-setup/mm.kiosk ~/mm.sh
+  cp ~/magic-mirror-setup/mm.server ~/mm.sh
   sudo chmod +x ~/mm.sh
 else
-  cp ~/magic-mirror-setup/mm.server ~/mm.sh
+  cp ~/magic-mirror-setup/mm.kiosk ~/mm.sh
   sudo chmod +x ~/mm.sh
 fi
 clear
