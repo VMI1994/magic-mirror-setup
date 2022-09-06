@@ -142,11 +142,12 @@ clear
 echo "installing script-server to control the MagicMirror"
 cd ~
 git clone https://github.com/bugy/script-server.git
+cd ~/script-server
 pip3 install -r requirements.txt
 python3 ~/script-server/tools/init.py --no-npm
 cd ~/magic-mirror-setup/scriptserver
 cp *.sh ~/
-sudo chmod +x ~/*.sh
+chmod +x ~/*.sh
 cp *.json ~/script-server/conf/runners
 cp conf.json ~/script-server/conf
 cp control.sh ~/
