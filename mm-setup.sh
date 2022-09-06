@@ -18,10 +18,10 @@ apps="curl git python3 python3-pip libffi-dev nginx-full neofetch"
 clear
 echo "This script will create a magic mirror instance on this server but first"
 echo "we will install dependencies"
-pause
+sleep 5
 sudo apt update
 sudo apt dist-upgrade -y
-sudo apt install $apps
+sudo apt install $apps -y
 
 
 # Offer optional server setup before magic mirror install
@@ -45,7 +45,7 @@ fi
 
 # Install node.js
 echo "We will now install node.js"
-pause
+sleep 5
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt install -y nodejs
 
@@ -53,7 +53,7 @@ sudo apt install -y nodejs
 # Install MagicMirror
 clear
 echo "Cloning MagicMirror into directory"
-pause
+sleep 5
 cd ~
 git clone https://github.com/MichMich/MagicMirror
 cd MagicMirror/
@@ -61,16 +61,16 @@ clear
 echo "Installing MagicMirror - this process may take"
 echo "up to 30 minutes to complete.  Do not press"
 echo "any keys until prompted to"
-pause
+sleep 5
 npm install --only=prod --omit=dev
 clear
 echo "MagicMirror has been installed"
-pause
+sleep 5
 
 # Install and enable PM2 process manager
 clear
 echo "PM2 Process manager will now be installed"
-pause
+sleep 5
 sudo npm install -g pm2
 cmd=$(pm2 startup | grep sudo)
 sudo $cmd
@@ -101,15 +101,12 @@ else
 fi
 clear
 echo "PM2 will autostart at boot and restart after any crashes"
-pause
+sleep 5
 
-
-# Add bash aliases to control magicmirror
-cp ~/magic-mirror-setup/help.txt ~/MagicMirror/help.txt
-cat ~/MagicMirror/help.txt >> ~/.bashrc
 
 
 # Download Modules
+clear
 echo "Downloading MagicMirror Modules"
 cd ~/MagicMirror/modules
 git clone https://github.com/edward-shen/MMM-pages.git
@@ -121,7 +118,7 @@ git clone https://github.com/fpfuetsch/MMM-GitHub-Monitor.git
 # Install Modules
 clear
 echo "Installing Magicmirror modules"
-pause
+sleep 5
 cd ~/MagicMirror/modules/MMM-pages
 npm install
 cd ~/MagicMirror/modules/MMM-page-indicator
@@ -138,6 +135,8 @@ bash ~/magic-mirror-setup/alias.sh &
 
 
 # Install https://github.com/bugy/script-server.git customized to control the magicmirror via bash scripts
+clear
+echo "installing script-server to control the MagicMirror"
 cd ~
 git clone https://github.com/bugy/script-server.git
 cd ~/magic-mirror-setup/scriptserver
@@ -148,15 +147,16 @@ cp conf.json ~/script-server/conf
 cp control.sh ~/script-server
 sudo chmod +x ~/script-server/control.sh
 pm2 start ~/script-server/control.sh
+sleep 5
 pm2 save
 pm2 stop control
-pause
+
 
 # Setup will now delete the install files and exit
 clear
 echo "Setup is complete, setup files will be deleted"
 echo
-pause
+sleep 5
 cd ~
 rm -rf magic-mirror-setup &
 sleep 2
