@@ -10,6 +10,16 @@ read junk
 }
 
 
+# User Input first so script can run unattended
+clear
+echo "would you like to secure and update the server before"
+echo "installing magic mirror(y/N)?"
+read choice
+clear
+echo "Do you want to install in kiosk mode(y/N)?"
+echo "kiosk shows MagicMirror on default display versus running web server only"
+read kiosk
+
 # Dependencies
 apps="curl git python3 python3-pip libffi-dev nginx-full neofetch"
 
@@ -25,10 +35,6 @@ sudo apt install $apps -y
 
 
 # Offer optional server setup before magic mirror install
-clear
-echo "would you like to secure and update the server before"
-echo "installing magic mirror(y/N)?"
-read choice
 if [ $choice = "y" ]
 then
   cd ~
@@ -88,9 +94,6 @@ pm2 stop mm
 
 
 # Kiosk or Server mode
-clear
-echo "Do you want to install in kiosk mode(y/N)?"
-read kiosk
 if [ $kiosk = "y" ]
 then
   cp ~/magic-mirror-setup/mm.kiosk ~/mm.sh
