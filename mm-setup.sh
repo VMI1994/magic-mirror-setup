@@ -150,6 +150,7 @@ cp conf.json ~/script-server/conf
 cp control.sh ~/script-server
 sudo chmod +x ~/script-server/control.sh
 pip3 install -r requirements.txt
+python3 ~/script-server/tools/init.py --no-npm
 pm2 start ~/script-server/control.sh
 sleep 5
 pm2 save
