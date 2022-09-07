@@ -1,7 +1,11 @@
 # magic-mirror-setup  
-A bash script to setup an instance of MagicMirror2 on Raspberry Pi OS
+A bash script to setup an instance of MagicMirror2 on Raspberry Pi OS.
 
+# MagicMirror Screen 1
+![MagicMirror 1](https://github.com/VMI1994/magic-mirror-setup/blob/main/screenshots/1.png)
 
+# Control Server Screen 1
+![control server 1](https://github.com/VMI1994/magic-mirror-setup/blob/main/screenshots/4.png)
 
 This is a bash script to install a Magicmirror(Credit to Michael Teeuw - https://github.com/MichMich/MagicMirror.git)
 instance on a Raspberry Pi running RaspberryPi OS.  Along with the MagicMirror install, a seperate control server is 
@@ -16,14 +20,18 @@ This has been tested on Ubuntu Desktop and Raspberry Pi OS(with desktop, will no
 
 Installation:
 
-1) Log in to terminal as a non-root user with sudo privileges
+Log in to terminal as a non-root user with sudo privileges and paste the following command:
 
-2) cd ~
+sudo apt install git && git clone https://github.com/VMI1994/magic-mirror-setup.git && cd magic-mirror-setup && bash mm-setup.sh
 
-3) git clone https://github.com/VMI1994/magic-mirror-setup.git
+Follow intructions on screen.  The MagicMirror will be located at http://your-server-ip:8080 and the control server will be
+locate at http://your-server-ip:5000
 
-4) cd magic-mirror-setup
+![2](https://github.com/VMI1994/magic-mirror-setup/blob/main/screenshots/2.png)
+![3](https://github.com/VMI1994/magic-mirror-setup/blob/main/screenshots/3.png)
+![5](https://github.com/VMI1994/magic-mirror-setup/blob/main/screenshots/5.png)
+![6](https://github.com/VMI1994/magic-mirror-setup/blob/main/screenshots/6.png)
+![7](https://github.com/VMI1994/magic-mirror-setup/blob/main/screenshots/7.png)
+![8](https://github.com/VMI1994/magic-mirror-setup/blob/main/screenshots/8.png)
+![9](https://github.com/VMI1994/magic-mirror-setup/blob/main/screenshots/9.png)
 
-5) bash mm-setup.sh
-
-6) Follow on screen instructions
