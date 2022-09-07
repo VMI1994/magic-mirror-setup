@@ -1,5 +1,6 @@
 #!/bin/bash
-sudo reboot now
+
 echo rebooting now
+sudo reboot now
 sleep 2
 exit
