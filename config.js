@@ -97,7 +97,7 @@ let config = {
 		},
 		{
 			module: 'MMM-GitHub-Monitor',
-			header: "Github monitor for Jason Ensminger",
+			header: "Github monitor for repos used to make this repo!!",
 			position: 'lower_third', // any possible region
 			config: {
 			repositories: [ // list of GitHub repositories to monitor
