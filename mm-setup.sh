@@ -173,18 +173,7 @@ rm ~/script-server/conf/runners/conf.json
 cp conf.json ~/script-server/conf
 cp control.sh ~/
 sudo chmod +x ~/control.sh
-pm2 start ~/control.sh
-pm2 start mm
-pm2 info mm
-pm2 info control
-pause
-sleep 5
-pm2 save
-pm2 info mm
-pm2 info control
-pause
-pm2 stop control
-pm2 stop mm
+
 
 
 # Setup will now delete the install files and exit
@@ -193,6 +182,13 @@ echo "Setup is complete, setup files will be deleted"
 echo
 sleep 5
 cd ~
+pm2 start mm
+pm2 info mm
+pm2 start control.sh
+pm2 info control
+pause
+pm2 save
+pause
 rm -rf magic-mirror-setup &
 sleep 2
 clear
