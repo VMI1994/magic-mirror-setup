@@ -30,7 +30,7 @@ echo "This script will create a magic mirror instance on this server but first"
 echo "we will install dependencies"
 sleep 5
 sudo apt update
-#sudo apt dist-upgrade -y
+sudo apt dist-upgrade -y
 sudo apt install $apps -y
 
 
