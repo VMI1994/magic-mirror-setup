@@ -21,7 +21,7 @@ echo "kiosk shows MagicMirror on default display versus running web server only"
 read kiosk
 
 # Dependencies
-apps="curl git python3 python3-pip libffi-dev nginx-full neofetch cec-client"
+apps="curl git python3 python3-pip libffi-dev nginx-full neofetch cec-utils"
 
 
 # Introduction
