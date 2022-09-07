@@ -176,6 +176,7 @@ sudo chmod +x ~/control.sh
 
 
 
+
 # Setup will now delete the install files and exit
 clear
 echo "Setup is complete, setup files will be deleted"
