@@ -30,7 +30,7 @@ echo "This script will create a magic mirror instance on this server but first"
 echo "we will install dependencies"
 sleep 5
 sudo apt update
-sudo apt dist-upgrade -y
+#sudo apt dist-upgrade -y
 sudo apt install $apps -y
 
 
@@ -53,6 +53,7 @@ fi
 echo "We will now install node.js"
 sleep 5
 curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt updatae
 sudo apt install -y nodejs
 
 
@@ -87,7 +88,6 @@ cp ~/magic-mirror-setup/config1.js ~/MagicMirror/config/config.js
 cd ~
 sudo chmod +x mm.sh
 pm2 start mm.sh
-pm2 save
 sleep 10
 pm2 stop mm
 
@@ -153,9 +153,11 @@ cp conf.json ~/script-server/conf
 cp control.sh ~/
 sudo chmod +x ~/control.sh
 pm2 start ~/control.sh
+pm2 start mm
 sleep 5
 pm2 save
 pm2 stop control
+pm2 stop mm
 
 
 # Setup will now delete the install files and exit
