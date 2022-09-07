@@ -103,7 +103,7 @@ let config = {
 			repositories: [ // list of GitHub repositories to monitor
 				{
 					owner: 'VMI1994', // reposistory owner
-					name: 'linux-setup', // repository name
+					name: 'magic-mirror-setup', // repository name
 					pulls: {
 						display: true, // show recent pull requests
 						loadCount: 5, // cycle through 10 latest pull requests
@@ -111,8 +111,17 @@ let config = {
 					}
 				},
 				{
-					owner: 'VMI1994',
-					name: 'magic-mirror-setup',
+					owner: 'MichMich',
+					name: 'MagicMirror',
+					pulls: {
+						display: true, // show recent pull requests
+						loadCount: 5, // cycle through 10 latest pull requests
+						displayCount: 1, // show 2 pull requests at a time
+					}
+				},
+				{
+					owner: 'bugy',
+					name: 'script-server',
 					pulls: {
 						display: true, // show recent pull requests
 						loadCount: 5, // cycle through 10 latest pull requests
