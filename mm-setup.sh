@@ -187,16 +187,14 @@ pm2 start mm
 pm2 info mm
 pm2 start control.sh
 pm2 info control
-pause
 pm2 save
-pause
 rm -rf magic-mirror-setup &
 sleep 2
 clear
-echo 'MagicMirror is located at http://localhost:8080'
+echo 'MagicMirror is located at http://your-server-ip:8080'
 echo
 echo
-echo 'Control server is located at http://localhost:5000'
+echo 'Control server is located at http://your-server-ip:5000'
 sleep 5
 echo 'System will now reboot'
 sudo reboot now &
