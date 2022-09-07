@@ -116,6 +116,11 @@ git clone https://github.com/edward-shen/MMM-pages.git
 git clone https://github.com/edward-shen/MMM-page-indicator.git
 git clone https://github.com/slametps/MMM-NetworkConnection.git
 git clone https://github.com/fpfuetsch/MMM-GitHub-Monitor.git
+git clone https://github.com/jclarke0000/MMM-MyScoreboard.git
+git clone https://github.com/cowboysdude/MMM-Nascar.git
+git clone https://github.com/vincep5/MMM-MyStandings.git
+git clone https://github.com/AgP42/MMM-SmartWebDisplay.git
+
 
 
 # Install Modules
@@ -128,6 +133,19 @@ cd ~/MagicMirror/modules/MMM-page-indicator
 npm install
 cd ~/MagicMirror/modules/MMM-GitHub-Monitor
 npm install
+cd ~/MagicMirror/modules/MMM-NetworkConnection
+npm install
+cd ~/MagicMirror/modules/MMM-MyScoreboard
+npm install
+cd ~/MagicMirror/modules/MMM-Nascar
+npm install
+cd ~/MagicMirror/modules/MMM-MyStandings
+npm install
+cd ~/MagicMirror/modules/MMM-SmartWebDisplay
+npm install
+
+
+
 echo "modules installed"
 cp ~/magic-mirror-setup/config.js ~/MagicMirror/config/config.js
 
