@@ -17,13 +17,5 @@ echo
 echo "5 min load is $load5 %"
 echo
 echo "15 min load is $load15 %"
-sleep 1
-echo; echo
-temp_c="$(vcgencmd measure_temp | cut -d"=" -f2 | cut -d "'" -f1)"
-echo "CPU Temp is $temp_c Celsius"
-echo; echo
-temp_f=$(echo "($temp_c*(9/5)+32)" | bc -l)
-temp_f=$(printf %.1f $temp_f)
-echo "CPU Temp is $temp_f Farenheit"
 exit
 
