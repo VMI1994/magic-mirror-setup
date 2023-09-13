@@ -199,7 +199,7 @@ let config = {
                 	NextURLInterval: 0, //in min, set it to 0 not to have automatic URL change. If only 1 URL given, it will be updated
                 	displayLastUpdate: false, //to display the last update of the URL
 					//displayLastUpdateFormat: 'ddd - HH:mm:ss', //format of the date and time to display
-                	url: ["https://forecast.predictwind.com/tracking/display/Last_Call?mapMode=useGoogle&#038;windSymbol=WindStreamlines&#038;weatherSource=PWG"], //source of the URL to be displayed
+                	url: ["https://radar.weather.gov/station/kfcx/standard"], //source of the URL to be displayed
 					//scrolling: "no", // allow scrolling or not. html 4 only
 					//shutoffDelay: 10000 //delay in miliseconds to video shut-off while using together with MMM-PIR-Sensor 
 				}
