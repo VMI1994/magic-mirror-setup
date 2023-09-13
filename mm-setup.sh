@@ -170,7 +170,7 @@ echo "Setup is complete, setup files will be deleted"
 echo
 sleep 5
 cd ~
-pm2 start mm
+pm2 start mm.sh
 pm2 info mm
 pm2 start control.sh
 pm2 info control
