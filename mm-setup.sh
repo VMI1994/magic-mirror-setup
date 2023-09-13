@@ -21,7 +21,7 @@ echo "kiosk shows MagicMirror on default display versus running web server only"
 read kiosk
 
 # Dependencies
-apps="curl git python3 python3-pip libffi-dev nginx-full neofetch cec-utils"
+apps="python3 python3-pip libffi-dev nginx-full neofetch cec-utils ca-certificates curl gnupg"
 
 
 # Introduction
@@ -51,8 +51,11 @@ fi
 
 # Install node.js
 echo "We will now install node.js"
-sleep 5
-curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sleep 1
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+NODE_MAJOR=18
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 sudo apt update
 sudo apt install -y nodejs
 
