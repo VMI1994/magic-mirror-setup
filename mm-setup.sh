@@ -81,18 +81,6 @@ sleep 5
 sudo npm install -g pm2
 cmd=$(pm2 startup | grep sudo)
 sudo $cmd
-cd ~/MagicMirror/modules
-git clone https://github.com/SaltyRiver/MMM-SimpleText.git
-cd MMM-SimpleText
-npm install
-cp ~/magic-mirror-setup/mm.kiosk ~/mm.sh
-cp ~/magic-mirror-setup/config1.js ~/MagicMirror/config/config.js
-cd ~
-sudo chmod +x mm.sh
-pm2 start mm.sh
-sleep 10
-pm2 stop mm
-
 
 
 # Kiosk or Server mode
@@ -107,7 +95,6 @@ fi
 clear
 echo "PM2 will autostart at boot and restart after any crashes"
 sleep 5
-
 
 
 # Download Modules
