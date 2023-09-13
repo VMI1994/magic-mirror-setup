@@ -28,7 +28,7 @@ apps="python3 python3-pip libffi-dev nginx-full neofetch cec-utils ca-certificat
 clear
 echo "This script will create a magic mirror instance on this server but first"
 echo "we will install dependencies"
-sleep 5
+sleep 2
 sudo apt update
 sudo apt dist-upgrade -y
 sudo apt install $apps -y
@@ -51,7 +51,7 @@ fi
 
 # Install node.js
 echo "We will now install node.js"
-sleep 1
+sleep 2
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
 NODE_MAJOR=18
@@ -63,7 +63,7 @@ sudo apt install -y nodejs
 # Install MagicMirror
 clear
 echo "Cloning MagicMirror into directory"
-sleep 5
+sleep 2
 cd ~
 git clone https://github.com/MichMich/MagicMirror
 cd MagicMirror/
@@ -71,16 +71,16 @@ clear
 echo "Installing MagicMirror - this process may take"
 echo "up to 30 minutes to complete.  Do not press"
 echo "any keys until prompted to"
-sleep 5
+sleep 2
 npm install --only=prod --omit=dev
 clear
 echo "MagicMirror has been installed"
-sleep 5
+sleep 2
 
 # Install and enable PM2 process manager
 clear
 echo "PM2 Process manager will now be installed"
-sleep 5
+sleep 2
 sudo npm install -g pm2
 cmd=$(pm2 startup | grep sudo)
 sudo $cmd
@@ -97,7 +97,7 @@ else
 fi
 clear
 echo "PM2 will autostart at boot and restart after any crashes"
-sleep 5
+sleep 2
 
 
 # Download Modules
@@ -171,7 +171,7 @@ sudo chmod +x ~/control.sh
 clear
 echo "Setup is complete, setup files will be deleted"
 echo
-sleep 5
+sleep 2
 cd ~
 pm2 start mm.sh
 pm2 info mm
@@ -185,8 +185,7 @@ echo 'MagicMirror is located at http://your-server-ip:8080'
 echo
 echo
 echo 'Control server is located at http://your-server-ip:5000'
-sleep 5
+sleep 2
 echo 'System will now reboot'
 sudo reboot now &
-sleep 5
 exit
