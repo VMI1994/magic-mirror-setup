@@ -43,11 +43,11 @@ let config = {
 			config: {
                 modules:
                     [
-                    [ "calendar", "clock", 'MMM-GitHub-Monitor' ], //PAGE 1 General
+                    [ "calendar", "clock" ], //PAGE 1 General
                     [ "MMM-MyScoreboard", 'MMM-Nascar', "MMM-MyStandings" ], //Page 2 Sports
                     [ 'MMM-SmartWebDisplay' ], //PAGE 3 Iframe from my website
 					],
-                fixed: ["MMM-page-indicator", 'MMM-NetworkConnection' ],
+                fixed: ["MMM-page-indicator" ],
                 rotationTime: 10 * 1000, //TIME BETWEEN PAGE CHANGE IN SECONDS
 				},
 		},
@@ -57,13 +57,6 @@ let config = {
 			position: 'bottom_left',
 			config: {
 				pages: 1,
-			}
-		},
-		{
-			module: 'MMM-NetworkConnection',
-			header: "Network Status",
-			position: 'bottom_right',
-			config: {
 			}
 		},
 		{
@@ -94,44 +87,6 @@ let config = {
 						url: "webcal://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics"					}
 					]
 					}
-		},
-		{
-			module: 'MMM-GitHub-Monitor',
-			header: "Github monitor for repos used to make this repo!!",
-			position: 'lower_third', // any possible region
-			config: {
-			repositories: [ // list of GitHub repositories to monitor
-				{
-					owner: 'VMI1994', // reposistory owner
-					name: 'magic-mirror-setup', // repository name
-					pulls: {
-						display: true, // show recent pull requests
-						loadCount: 5, // cycle through 10 latest pull requests
-						displayCount: 1, // show 2 pull requests at a time
-					}
-				},
-				{
-					owner: 'MichMich',
-					name: 'MagicMirror',
-					pulls: {
-						display: true, // show recent pull requests
-						loadCount: 5, // cycle through 10 latest pull requests
-						displayCount: 1, // show 2 pull requests at a time
-					}
-				},
-				{
-					owner: 'bugy',
-					name: 'script-server',
-					pulls: {
-						display: true, // show recent pull requests
-						loadCount: 5, // cycle through 10 latest pull requests
-						displayCount: 1, // show 2 pull requests at a time
-					}
-				},
-			],
-			sort: true, // sort repositories alphabetically (default: true)
-			updateInterval: 10000, // update interval in milliseconds (default: 10 min)
-			},
 		},
 		{
 			module: "MMM-MyScoreboard",
