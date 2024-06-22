@@ -1,9 +1,0 @@
-{
-  "port": 5000,
-  "address": "0.0.0.0",
-  "title": "MagicMirror Control",
-  "logging": {
-    "execution_file": "$DATE-$ID.log",
-    "execution_date_format": "%y-%m-%d_%H-%M"
-  }
-}
