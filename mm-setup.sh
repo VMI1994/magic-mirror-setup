@@ -107,8 +107,6 @@ echo "Downloading MagicMirror Modules"
 cd ~/MagicMirror/modules
 git clone https://github.com/edward-shen/MMM-pages.git
 git clone https://github.com/edward-shen/MMM-page-indicator.git
-git clone https://github.com/slametps/MMM-NetworkConnection.git
-git clone https://github.com/fpfuetsch/MMM-GitHub-Monitor.git
 git clone https://github.com/jclarke0000/MMM-MyScoreboard.git
 git clone https://github.com/cowboysdude/MMM-Nascar.git
 git clone https://github.com/vincep5/MMM-MyStandings.git
@@ -123,10 +121,6 @@ sleep 5
 cd ~/MagicMirror/modules/MMM-pages
 npm install
 cd ~/MagicMirror/modules/MMM-page-indicator
-npm install
-cd ~/MagicMirror/modules/MMM-GitHub-Monitor
-npm install
-cd ~/MagicMirror/modules/MMM-NetworkConnection
 npm install
 cd ~/MagicMirror/modules/MMM-MyScoreboard
 npm install
