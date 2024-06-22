@@ -22,10 +22,3 @@ sudo apt install git && git clone https://github.com/VMI1994/magic-mirror-setup.
 Follow intructions on screen.  The MagicMirror will be located at http://your-server-ip:8080.
 
 ![2](https://github.com/VMI1994/magic-mirror-setup/blob/main/screenshots/2.png)
-![3](https://github.com/VMI1994/magic-mirror-setup/blob/main/screenshots/3.png)
-![5](https://github.com/VMI1994/magic-mirror-setup/blob/main/screenshots/5.png)
-![6](https://github.com/VMI1994/magic-mirror-setup/blob/main/screenshots/6.png)
-![7](https://github.com/VMI1994/magic-mirror-setup/blob/main/screenshots/7.png)
-![8](https://github.com/VMI1994/magic-mirror-setup/blob/main/screenshots/8.png)
-![9](https://github.com/VMI1994/magic-mirror-setup/blob/main/screenshots/9.png)
-
