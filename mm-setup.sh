@@ -146,24 +146,9 @@ cp ~/magic-mirror-setup/config.js ~/MagicMirror/config/config.js
 
 # Activate Aliases before cleaning up(Used separate script as the command will halt this script
 bash ~/magic-mirror-setup/alias.sh &
-
-
-# Install https://github.com/bugy/script-server.git customized to control the magicmirror via bash scripts
-clear
-echo "installing script-server to control the MagicMirror"
-cd ~
-git clone https://github.com/bugy/script-server.git
-cd ~/script-server
-pip3 install -r requirements.txt
-python3 ~/script-server/tools/init.py --no-npm
 cd ~/magic-mirror-setup/scriptserver
 cp *.sh ~/
 chmod +x ~/*.sh
-cp *.json ~/script-server/conf/runners
-rm ~/script-server/conf/runners/conf.json
-cp conf.json ~/script-server/conf
-cp control.sh ~/
-sudo chmod +x ~/control.sh
 
 
 
