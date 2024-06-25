@@ -48,6 +48,8 @@ fi
 # Install magic mirror
 
 # installs nvm (Node Version Manager)
+clear
+echo "We will now install NodeJS Version Manager"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 sleep 2
 export NVM_DIR="$HOME/.nvm"
@@ -59,6 +61,8 @@ sleep 1
 
 # Install node.js
 # download and install Node.js (you may need to restart the terminal)
+clear
+echo "We will now install NodeJS Version 18"
 nvm install 18
 
 
@@ -140,13 +144,14 @@ cd ~/magic-mirror-setup/scriptserver
 cp *.sh ~/
 chmod +x ~/*.sh
 
+clear
 echo "PM2 Process manager will now be installed"
+echo "PM2 will autostart at boot and restart after any crashes"
 sleep 2
 npm install pm2@latest -g
 sleep 2
 cmd=$(pm2 startup | grep sudo)
 echo $cmd | bash
-echo "PM2 will autostart at boot and restart after any crashes"
 
 
 
