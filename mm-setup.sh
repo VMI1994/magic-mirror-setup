@@ -161,6 +161,7 @@ pm2 info mm
 pm2 save
 rm -rf magic-mirror-setup &
 sleep 2
+pm2 stop mm
 clear
 echo 'MagicMirror is located at http://your-server-ip:8080'
 echo
