@@ -90,7 +90,6 @@ else
   sudo chmod +x ~/mm.sh
 fi
 clear
-echo "PM2 will autostart at boot and restart after any crashes"
 sleep 2
 
 
@@ -113,22 +112,26 @@ echo "Installing Magicmirror modules"
 sleep 5
 cd ~/MagicMirror/modules/MMM-pages
 npm install
+npm audit fix
 cd ~/MagicMirror/modules/MMM-page-indicator
 npm install
+npm audit fix
 cd ~/MagicMirror/modules/MMM-MyScoreboard
 npm install
+npm audit fix
 cd ~/MagicMirror/modules/MMM-Nascar
 npm install
+npm audit fix
 cd ~/MagicMirror/modules/MMM-MyStandings
 npm install
+npm audit fix
 cd ~/MagicMirror/modules/MMM-SmartWebDisplay
 npm install
-
+npm audit fix
 
 
 echo "modules installed"
 cp ~/magic-mirror-setup/config.js ~/MagicMirror/config/config.js
-
 
 
 # Activate Aliases before cleaning up(Used separate script as the command will halt this script
@@ -143,7 +146,7 @@ npm install pm2@latest -g
 sleep 2
 cmd=$(pm2 startup | grep sudo)
 echo $cmd | bash
-
+echo "PM2 will autostart at boot and restart after any crashes"
 
 
 
@@ -155,17 +158,14 @@ sleep 2
 cd ~
 pm2 start mm.sh
 pm2 info mm
-pm2 start control.sh
-pm2 info control
 pm2 save
 rm -rf magic-mirror-setup &
 sleep 2
 clear
 echo 'MagicMirror is located at http://your-server-ip:8080'
 echo
-echo
-echo 'Control server is located at http://your-server-ip:5000'
 sleep 2
-echo 'System will now reboot'
+echo 'System will reboot in 10 seconds.  Press ctrl+c to stop'
+sleep 10
 sudo reboot now &
 exit
