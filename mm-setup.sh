@@ -30,7 +30,6 @@ echo "This script will create a magic mirror instance on this server but first"
 echo "we will install dependencies"
 sleep 2
 sudo apt update
-sudo apt dist-upgrade -y
 sudo apt install $apps -y
 
 
@@ -61,13 +60,6 @@ sleep 1
 # Install node.js
 # download and install Node.js (you may need to restart the terminal)
 nvm install 18
-
-echo "PM2 Process manager will now be installed"
-sleep 2
-npm install pm2@latest -g
-sleep 2
-cmd=$(pm2 startup | grep sudo)
-echo $cmd | bash
 
 
 # Install MagicMirror
@@ -144,6 +136,13 @@ bash ~/magic-mirror-setup/alias.sh &
 cd ~/magic-mirror-setup/scriptserver
 cp *.sh ~/
 chmod +x ~/*.sh
+
+echo "PM2 Process manager will now be installed"
+sleep 2
+npm install pm2@latest -g
+sleep 2
+cmd=$(pm2 startup | grep sudo)
+echo $cmd | bash
 
 
 
