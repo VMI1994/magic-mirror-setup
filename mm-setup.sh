@@ -74,7 +74,7 @@ echo "Installing MagicMirror - this process may take"
 echo "up to 30 minutes to complete.  Do not press"
 echo "any keys until prompted to"
 sleep 2
-npm install --only=prod --omit=dev
+npm run install-mm
 clear
 echo "MagicMirror has been installed"
 sleep 2
