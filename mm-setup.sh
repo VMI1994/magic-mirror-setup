@@ -116,22 +116,16 @@ echo "Installing Magicmirror modules"
 sleep 5
 cd ~/MagicMirror/modules/MMM-pages
 npm install
-npm audit fix
 cd ~/MagicMirror/modules/MMM-page-indicator
 npm install
-npm audit fix
 cd ~/MagicMirror/modules/MMM-MyScoreboard
 npm install
-npm audit fix
 cd ~/MagicMirror/modules/MMM-Nascar
 npm install
-npm audit fix
 cd ~/MagicMirror/modules/MMM-MyStandings
 npm install
-npm audit fix
 cd ~/MagicMirror/modules/MMM-SmartWebDisplay
 npm install
-npm audit fix
 
 
 echo "modules installed"
