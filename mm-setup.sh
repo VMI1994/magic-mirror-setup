@@ -65,6 +65,8 @@ clear
 echo "We will now install NodeJS Version 18"
 nvm install 18
 
+# Install npm
+sudo apt install -y npm
 
 # Install MagicMirror
 clear
