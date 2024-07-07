@@ -63,7 +63,7 @@ sleep 1
 # download and install Node.js (you may need to restart the terminal)
 clear
 echo "We will now install NodeJS Version 18"
-nvm install 18
+nvm install 22
 
 # Install npm
 sudo apt install -y npm
