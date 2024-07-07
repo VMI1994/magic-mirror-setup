@@ -62,7 +62,7 @@ sleep 1
 # Install node.js
 # download and install Node.js (you may need to restart the terminal)
 clear
-echo "We will now install NodeJS Version 18"
+echo "We will now install NodeJS"
 nvm install 22
 
 # Install npm
