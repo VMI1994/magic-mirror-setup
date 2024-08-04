@@ -58,6 +58,7 @@ export NVM_DIR="$HOME/.nvm"
 sleep 2
 source ~/.bashrc
 sleep 1
+exec bash
 
 # Install node.js
 # download and install Node.js (you may need to restart the terminal)
