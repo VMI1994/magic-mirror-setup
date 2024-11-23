@@ -1,19 +1,5 @@
 #!/bin/bash
 
-pause() {
-echo
-echo
-echo "Press Enter to continue"
-read junk
-}
-
-# Install node.js
-# download and install Node.js (you may need to restart the terminal)
-clear
-echo "We will now install NodeJS"
-nvm install 22
-pause()
-
 # Install MagicMirror
 clear
 echo "Cloning MagicMirror into directory"
@@ -29,7 +15,6 @@ sleep 2
 npm run install-mm
 clear
 echo "MagicMirror has been installed"
-pause ()
 
 
 # Kiosk mode
