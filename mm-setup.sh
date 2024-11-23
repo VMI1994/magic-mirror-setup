@@ -16,9 +16,6 @@ echo "would you like to secure and update the server before"
 echo "installing magic mirror(Y/n)?"
 read choice
 clear
-echo "Do you want to install in kiosk mode(Y/n)?"
-echo "kiosk shows MagicMirror on default display versus running web server only"
-read kiosk
 
 # Dependencies
 apps="python3 python3-pip libffi-dev nginx-full neofetch cec-utils ca-certificates curl gnupg"
@@ -56,9 +53,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 sleep 2
-source ~/.bashrc
-sleep 1
-exec bash
+clear
+echo "A reboot is required to continue"
+echo "After reboot run mm-setup2.sh"
+echo "Press Enter to reboot"
+read junk
+sudo reboot now &
+exit
+
 
 # Install node.js
 # download and install Node.js (you may need to restart the terminal)
@@ -87,18 +89,9 @@ echo "MagicMirror has been installed"
 sleep 2
 
 
-# Kiosk or Server mode
-if [ $kiosk = "n" ]
-then
-  cp ~/magic-mirror-setup/mm.server ~/mm.sh
-  sudo chmod +x ~/mm.sh
-else
-  cp ~/magic-mirror-setup/mm.kiosk ~/mm.sh
-  sudo chmod +x ~/mm.sh
-fi
-clear
-sleep 2
-
+# Kiosk mode
+cp ~/magic-mirror-setup/mm.kiosk ~/mm.sh
+sudo chmod +x ~/mm.sh
 
 # Download Modules
 clear
