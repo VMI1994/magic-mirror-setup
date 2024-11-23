@@ -55,7 +55,8 @@ export NVM_DIR="$HOME/.nvm"
 sleep 2
 clear
 echo "A reboot is required to continue"
-echo "After reboot run mm-setup2.sh"
+echo "After reboot login and type 'nvm install 22' "
+echo "After NodeJS installs, run mm-setup2.sh"
 echo "Press Enter to reboot"
 read junk
 sudo reboot now &
