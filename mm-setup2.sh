@@ -1,9 +1,18 @@
+#!/bin/bash
+
+pause() {
+echo
+echo
+echo "Press Enter to continue"
+read junk
+}
 
 # Install node.js
 # download and install Node.js (you may need to restart the terminal)
 clear
 echo "We will now install NodeJS"
 nvm install 22
+pause()
 
 # Install MagicMirror
 clear
@@ -20,7 +29,7 @@ sleep 2
 npm run install-mm
 clear
 echo "MagicMirror has been installed"
-sleep 2
+pause ()
 
 
 # Kiosk mode
@@ -72,11 +81,11 @@ clear
 echo "PM2 Process manager will now be installed"
 echo "PM2 will autostart at boot and restart after any crashes"
 sleep 2
-npm install pm2@latest -g
+npm install pm2 -g
 sleep 2
 cmd=$(pm2 startup | grep sudo)
 echo $cmd | bash
-
+pause ()
 
 
 # Setup will now delete the install files and exit
