@@ -5,9 +5,6 @@ clear
 echo "We will now install NodeJS"
 nvm install 22
 
-# Install npm
-sudo apt install -y npm
-
 # Install MagicMirror
 clear
 echo "Cloning MagicMirror into directory"
@@ -90,14 +87,12 @@ sleep 2
 cd ~
 pm2 start mm.sh
 pm2 info mm
+sleep 2
 pm2 save
 rm -rf magic-mirror-setup &
 sleep 2
-pm2 stop mm
 clear
 echo 'MagicMirror is located at http://your-server-ip:8080'
-echo
-sleep 2
-echo 'System will reboot in 10 seconds.  Press ctrl+c to stop'
-sleep 10
-sudo reboot now &
+cd ~
+exit
+
