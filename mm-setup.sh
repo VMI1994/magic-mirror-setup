@@ -18,7 +18,7 @@ read choice
 clear
 
 # Dependencies
-apps="python3 python3-pip libffi-dev nginx-full neofetch cec-utils ca-certificates curl gnupg"
+apps="npm python3 python3-pip libffi-dev nginx-full neofetch cec-utils ca-certificates curl gnupg"
 
 
 # Introduction
