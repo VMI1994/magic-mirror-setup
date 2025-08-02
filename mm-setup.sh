@@ -44,20 +44,14 @@ fi
 
 # Install magic mirror
 
-# installs nvm (Node Version Manager)
+# installs NodeJs
 clear
-echo "We will now install NodeJS Version Manager"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-sleep 2
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-sleep 2
-clear
-echo "A reboot is required to continue"
-echo "After reboot login and type 'nvm install 22' "
-echo "After NodeJS installs, run mm-setup2.sh"
-echo "Press Enter to reboot"
-read junk
-sudo reboot now &
-exit
+cd ~
+git clone https://github.com/VMI1994/Nodejs.git
+cd Nodejs
+bash install-node.sh
+
+
+
+
+
