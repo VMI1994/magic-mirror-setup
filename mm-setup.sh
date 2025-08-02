@@ -70,6 +70,7 @@ sleep 2
 npm run install-mm
 clear
 echo "MagicMirror has been installed"
+sleep 2
 
 
 # Kiosk mode
